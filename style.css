@@ -8,3 +8,9 @@ body {
     font-size: 64px;
     text-align: center;
 }
+
+#root {
+    position: relative;
+    top: 50%;
+    margin-top: -32px;
+}
