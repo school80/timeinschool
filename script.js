@@ -51,8 +51,23 @@ lessons[9].setHours(13,55,0);
 lessons[11].setHours(14,50,0);
 lessons[13].setHours(15,45,0);
 
+let today = new Date();
+today.setHours(9,0,0);
 
-function startDay(){
+function isStart(){
+    console.log('test');
+    if ((new Date() <= today) || (new Date() >= lessons[13])){
+        root.innerHTML = 'Уроки закончились';
+        console.log('today: ', today);
+        console.log('new Date:', new Date());
+        setTimeout(() => isStart(),1000);
+    } else {
+        startDay();
+    }
+}
+
+function startDay() {
+    console.log('testt');
     //1 urok
     timer([0,44,59],
         function (h,m,s) {
@@ -199,18 +214,5 @@ function startDay(){
     },lessons[13]-lessons[0]);
 }
 
-let today = new Date();
-today.setHours(9,0,0);
-
-function isStart(){
-    if (new Date() <= today){
-        root.innerHTML = 'Уроки закончились';
-        console.log('today: ', today);
-        console.log('new Date:', new Date());
-        setTimeout(() => isStart(),1000);
-    } else {
-        startDay();
-    }
-}
 
 isStart();
