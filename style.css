@@ -7,6 +7,7 @@ body {
     font-family: 'Oswald', sans-serif;
     font-size: 64px;
     text-align: center;
+    overflow: hidden;
 }
 
 #root {
